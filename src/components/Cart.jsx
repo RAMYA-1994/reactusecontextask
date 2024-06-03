@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import './Slide.css';
+// import './Slide.css';
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    fetch('/cart-data.json')
+    fetch('https://drive.google.com/file/d/1fOadeM1liwbUK38z92F0XYugk2jwqK2r/view')
+    
       .then(response => response.json())
+
       .then(data => setCartItems(data))
+      // .then(console.log(data))
       .catch(error => console.error('Error fetching cart data:', error));
   }, []);
 
